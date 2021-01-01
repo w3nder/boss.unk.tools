@@ -1,32 +1,34 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+  <div
+    id="app"
+    class="min-h-screen w-full bg-gray-200 flex flex-col items-center  py-2 px-4"
+  >
+    <staggered-fade
+      :duration="150"
+      tag="ul"
+      class="flex flex-col w-full items-center max-w-md"
+    >
+      <boss-card
+        v-for="(boss, index) in chatlog"
+        :boss="boss"
+        :data-index="index"
+        :key="boss.nome"
+      />
+    </staggered-fade>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { mapState } from "vuex";
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+import BossCard from "./components/BossCard";
+import StaggeredFade from "./components/StaggeredFade";
+export default {
+  name: "App",
+  components: {
+    BossCard,
+    StaggeredFade
+  },
+  computed: mapState(["chatlog"])
+};
+</script>
