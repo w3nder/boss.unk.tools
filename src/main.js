@@ -10,7 +10,7 @@ import store from "./store";
 Vue.use(
   new VueSocketIO({
     debug: false,
-    connection: SocketIO("http://3.133.101.143:4001/"),
+    connection: SocketIO("https://raidboss.unk.tools/"),
     vuex: {
       store,
       actionPrefix: "SOCKET_",
