@@ -15,7 +15,7 @@ import store from "./store";
 Vue.use(
   new VueSocketIO({
     debug: false,
-    connection: SocketIO("http://raidboss.unk.tools/"),
+    connection: SocketIO("//raidboss.unk.tools/"),
     vuex: {
       store,
       actionPrefix: "SOCKET_",
