@@ -3,6 +3,7 @@
     id="app"
     class="min-h-screen w-full bg-gray-200 flex flex-col items-center  py-2 px-4"
   >
+    <LoaderFull></LoaderFull>
     <staggered-fade
       :duration="150"
       tag="ul"
@@ -20,12 +21,14 @@
 
 <script>
 import { mapState } from "vuex";
-
+import LoaderFull from "./components/LoaderFull";
 import BossCard from "./components/BossCard";
 import StaggeredFade from "./components/StaggeredFade";
+
 export default {
   name: "App",
   components: {
+    LoaderFull,
     BossCard,
     StaggeredFade
   },
