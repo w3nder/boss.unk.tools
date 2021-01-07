@@ -23,7 +23,6 @@ export default new Vuex.Store({
     },
     SOCKET_notificar(context, data) {
       new Audio(require("@/assets/sound/alerta.wav")).play();
-
       this._vm.$toast.success(`Vivo => ${data.nome}`);
     }
   },
