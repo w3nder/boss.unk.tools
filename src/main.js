@@ -21,7 +21,7 @@ import "izitoast/dist/css/iziToast.css";
 Vue.use(
   new VueSocketIO({
     debug: false,
-    connection: SocketIO("http://localhost:4001/"),
+    connection: SocketIO("https://raidboss.unk.tools/"),
     vuex: {
       store,
       actionPrefix: "SOCKET_",
