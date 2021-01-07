@@ -3,6 +3,7 @@ import App from "./App.vue";
 import VueSocketIO from "vue-socket.io";
 import SocketIO from "socket.io-client";
 import VueIziToast from "vue-izitoast";
+import VueGtag from "vue-gtag";
 
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
@@ -20,7 +21,7 @@ import "izitoast/dist/css/iziToast.css";
 Vue.use(
   new VueSocketIO({
     debug: false,
-    connection: SocketIO("https://raidboss.unk.tools/"),
+    connection: SocketIO("http://localhost:4001/"),
     vuex: {
       store,
       actionPrefix: "SOCKET_",
@@ -28,6 +29,10 @@ Vue.use(
     }
   })
 );
+
+Vue.use(VueGtag, {
+  config: { id: "G-JPWM95F7EE" }
+});
 
 // Init plugin
 Vue.use(Loading);

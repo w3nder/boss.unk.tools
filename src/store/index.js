@@ -22,8 +22,7 @@ export default new Vuex.Store({
       context.commit("PUSH_MESSAGE", data);
     },
     SOCKET_notificar(context, data) {
-      new Audio(require("@/assets/sound/payment_success.mp3")).play();
-      console.log(data);
+      new Audio(require("@/assets/sound/alerta.wav")).play();
 
       this._vm.$toast.success(`Vivo => ${data.nome}`);
     }
