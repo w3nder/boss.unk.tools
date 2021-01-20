@@ -8,7 +8,7 @@ import VueGtag from "vue-gtag";
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
 
-import Loading from "vue-loading-overlay";
+// import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
 
 Vue.config.productionTip = false;
@@ -35,7 +35,7 @@ Vue.use(VueGtag, {
 });
 
 // Init plugin
-Vue.use(Loading);
+// Vue.use(Loading);
 Vue.use(VueIziToast);
 Vue.use(Toast);
 

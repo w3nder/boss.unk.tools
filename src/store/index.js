@@ -6,7 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     chatlog: [],
-    LoadingOverlay: true
+    LoadingOverlay: true,
+    soud: true
   },
   mutations: {
     PUSH_MESSAGE(state, data) {
@@ -14,6 +15,9 @@ export default new Vuex.Store({
     },
     CHANGE_LOADING(state, status) {
       state.LoadingOverlay = status;
+    },
+    CHANGE_SOUD(state, status) {
+      state.soud = status;
     }
   },
   actions: {
@@ -21,14 +25,21 @@ export default new Vuex.Store({
       context.commit("CHANGE_LOADING", false);
       context.commit("PUSH_MESSAGE", data);
     },
-    SOCKET_notificar(context, data) {
-      new Audio(require("@/assets/sound/alerta.wav")).play();
-      this._vm.$toast.success(`Vivo => ${data.nome}`);
+    SOCKET_notificar() {
+      if (this.state.soud) {
+        new Audio(require("@/assets/sound/alerta.wav")).play();
+      }
+    },
+    changeState(context, status) {
+      context.commit("CHANGE_SOUD", status);
     }
   },
   getters: {
     isLoading(state) {
       return state.LoadingOverlay;
+    },
+    isSoud(state) {
+      return state.soud;
     }
   }
 });
