@@ -6,7 +6,7 @@
       <img class="w-12 h-12 rounded-full" :src="boss.image" :alt="boss.nome" />
       <div class="ml-3">
         <p class="text-gray-900 font-sans tracking-wide text-sm">
-          {{ boss.nome }} - {{boss.localizacao}}
+          {{ boss.nome }} 
         </p>
         <p
           v-if="boss.status === 'Morto'"
