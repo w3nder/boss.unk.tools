@@ -15,9 +15,6 @@
           {{ boss.dtMorte }} - {{ boss.dtSpawn }}
         </p>
         
-         <p class="text-gray-900 font-sans tracking-wide text-sm">
-          {{ boss.localizacao }} 
-        </p>
       </div>
     </div>
     <div class="flex items-center">
