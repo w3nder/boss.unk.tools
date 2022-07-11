@@ -138,7 +138,7 @@ export default function MediaCard(props) {
                 <CardMedia
                   component="img"
                   height="140"
-                  image={`${token.image}`}
+                  image={`https://status-boss.herokuapp.com/${token.image}`}
                   alt={token.nome}
                 />
                 <CardContent
