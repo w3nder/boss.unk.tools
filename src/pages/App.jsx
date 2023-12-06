@@ -137,7 +137,7 @@ export default function MediaCard(props) {
                 />
                 <CardContent
                   className={
-                    token.status === "Vivo" ? vivo : morto
+                    token.status === "Vivo" ? 'vivo' : 'morto'
                   }
                 >
                   <Typography gutterBottom variant="h5" component="div">
