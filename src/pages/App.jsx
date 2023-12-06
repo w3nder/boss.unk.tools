@@ -18,7 +18,7 @@ import { makeStyles } from "@material-ui/styles";
 import socketClient from "socket.io-client";
 import alertSound from "../assets/alerta.wav";
 
-const SERVER = "https://status-boss.herokuapp.com";
+const SERVER = "http://154.56.41.195:1337";
 
 const useStyles = makeStyles((theme) => ({
   container: {
