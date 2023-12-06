@@ -123,7 +123,7 @@ export default function MediaCard(props) {
         container
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
-        
+        className="container"
       >
         {boss.map((token, index) => (
           <Grid item xs={2} sm={4} md={3} key={index}>
@@ -137,7 +137,7 @@ export default function MediaCard(props) {
                 />
                 <CardContent
                   className={
-                    token.status === "Vivo" ? classes.vivo : classes.morto
+                    token.status === "Vivo" ? vivo : morto
                   }
                 >
                   <Typography gutterBottom variant="h5" component="div">
