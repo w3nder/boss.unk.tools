@@ -1,4 +1,6 @@
 import * as React from "react";
+import "./App.css";
+
 import {
   Tooltip,
   Typography,
@@ -14,24 +16,12 @@ import {
 } from "@mui/material";
 import useSound from "use-sound";
 
-import { makeStyles } from "@material-ui/styles";
 import socketClient from "socket.io-client";
 import alertSound from "../assets/alerta.wav";
 
-const SERVER = "http://154.56.41.195:1337";
+const SERVER = "https://alerta.unkbot.live";
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
-  },
-  vivo: {
-    background: "#1feb26",
-  },
-  morto: {
-    background: "#cfb8b8",
-  },
-}));
+
 
 function Text({ boss }) {
   if (boss.status === "Vivo") {
@@ -55,7 +45,6 @@ function Text({ boss }) {
 }
 
 export default function MediaCard(props) {
-  const classes = useStyles();
   const [boss, setBoss] = React.useState([]);
   const [socket, setSocket] = React.useState(null);
   const [socketConnected, setSocketConnected] = React.useState(false);
@@ -124,12 +113,17 @@ export default function MediaCard(props) {
   };
 
   return (
-    <div>
+    <div
+    style={{
+      marginTop: 20,
+
+    }}
+    >
       <Grid
-        className={classes.container}
         container
         spacing={{ xs: 2, md: 3 }}
         columns={{ xs: 4, sm: 8, md: 12 }}
+        
       >
         {boss.map((token, index) => (
           <Grid item xs={2} sm={4} md={3} key={index}>
@@ -138,7 +132,7 @@ export default function MediaCard(props) {
                 <CardMedia
                   component="img"
                   height="140"
-                  image={`https://status-boss.herokuapp.com/${token.image}`}
+                  image={`https://alerta.unkbot.live/${token.image}`}
                   alt={token.nome}
                 />
                 <CardContent

@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./pages/App";
 import theme from "./theme";
-import { ThemeProvider } from "@material-ui/styles";
+import { ThemeProvider } from '@mui/material/styles';
 
 ReactDOM.render(
   <React.StrictMode>

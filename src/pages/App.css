@@ -1,0 +1,11 @@
+.container {
+    margin-top: 20px;
+}
+
+.vivo {
+    background-color: #4caf50;
+}
+
+.morto {
+    background-color: #f44336;
+}
